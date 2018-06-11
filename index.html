@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Слайдер</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <section class="slider">
+      <button class="slider__button slider__button--left" type="button">Прокрутить влево</button>
+      <div class="slider__positioner">
+        <div class="slider__container"></div>
+      </div>
+      <button class="slider__button slider__button--right" type="button">Прокрутить вправо</button>
+    </section>
+    <template>
+      <article class="item">
+        <div class="item__image"><img src=""></div>
+        <div class="item__info">
+          <div class="item__title"></div>
+          <div class="item__author"></div>
+          <div class="item__price">Цена:&nbsp;<span></span>&nbsp;руб.</div>
+          <div class="item__discount">Скидка: <span></span>%</div>
+        </div>
+        <button class="item__buy" type="button">Купить</button>
+      </article>
+    </template>
+    <table class="cart">
+      <thead>
+        <th>Название</th>
+        <th>Цена с учетом скидки</th>
+      </thead>
+      <tbody style="text-align: left"></tbody>
+      <tfoot>
+        <tr>
+          <td style="border: none">Итог:</td>
+          <td>Всего: <span class="cart__items"></span>&nbsp;шт.</td>
+        </tr>
+        <tr>
+          <td style="border: none"></td>
+          <td>Сумма: <span class="cart__total"></span>&nbsp;руб.</td>
+        </tr>
+      </tfoot>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>
