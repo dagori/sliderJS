@@ -95,7 +95,7 @@ function selectItem() {
   }
 }
 
-// Корзина товаров
+// Подсчет товаров
 var mutationObserver = new MutationObserver(function(mutations) {
   mutations.forEach(function(mutation) {
     if(mutation.type === 'childList' && cartPosition.children.length) {
