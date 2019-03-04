@@ -42,30 +42,22 @@ loadJSON(function(response) {
 });
 
 // Слайдер
-var buttonLeft = document.querySelector('.slider__button--left');
-var buttonRight = document.querySelector('.slider__button--right');
 var item = document.getElementsByTagName('article');
-var step = 0;
+var position = 0;
+var itemWidth = 225;
+var step = 3;
 
 function moveSlider() {
   var target = event.target;
-  if (target.classList.contains('slider__button--right') && step > (-88)) {
-    step+=(-4);
-    sliderContainer.style.transform = "translateX(" + step + "%)";
-    sliderContainer.style.transition = "transform 1s";
-  } else if (target.classList.contains('slider__button--right') && step == (-88)) {
-    step = 0;
-    sliderContainer.style.transform = "translateX(" + step + "%)";
-    sliderContainer.style.transition = "transform";
-  } else if (target.classList.contains('slider__button--left') && step != 0) {
-    step+=4;
-    sliderContainer.style.transform = "translateX(" + step + "%)";
-    sliderContainer.style.transition = "transform 1s";
-  } else if (target.classList.contains('slider__button--left') && step == 0) {
-    step = (-88);
-    sliderContainer.style.transform = "translateX(" + step + "%)";
-    sliderContainer.style.transition = "transform";
+  if(!target.classList.contains('slider__button')) return;
+  if(target.classList.contains('slider__button--left')) {
+    position = Math.min(itemWidth * step + position, 0);
   }
+  if(target.classList.contains('slider__button--right')) {
+    position = Math.max(-itemWidth * step + position, -itemWidth * item.length + itemWidth * step);
+  }
+  sliderContainer.style.transform = 'translateX(' + position + 'px)';
+  console.log('wtf&&&');
 }
 slider.addEventListener('click', moveSlider);
 

@@ -1,5 +1,5 @@
 .slider {
-  width: 700px;
+  width: 675px;
   margin: 10px auto;
   padding: 5px 15px;
   position: relative;
@@ -12,13 +12,11 @@
 
 .slider__container {
   display: flex;
-  width: calc(233px * 25);
-  justify-content: space-between;
+  transition: transform .5s;
 }
 
 .item {
-  width: 300px;
-  margin: 0 15px 0 0;
+  width: 215px;
   padding: 0 5px;
   display: flex;
   flex-direction: column;
@@ -27,14 +25,6 @@
 
 .item--selected {
   background: rgba(30, 144, 255, 0.5);
-}
-
-.item:first-of-type {
-  margin-left: 7px;
-}
-
-.item:last-of-type {
-  margin-right: 0;
 }
 
 /*Информация о товаре*/
@@ -57,15 +47,14 @@
   max-width: 200px;
   margin-top: auto;
   background: rgba(210, 105, 30, 0.5);
-  border none;
+  border: none;
   font-weight: bold;
-  color:
 }
 
 /*Картинка*/
 
 .item__image {
-  max-width: 300px;
+  width: inherit;
   margin: 0 auto;
 }
 
