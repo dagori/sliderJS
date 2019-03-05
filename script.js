@@ -44,20 +44,19 @@ loadJSON(function(response) {
 // Слайдер
 var item = document.getElementsByTagName('article');
 var position = 0;
-var itemWidth = 225;
-var step = 3;
+var ITEM_WIDTH = 225;
+var STEP = 3;
 
 function moveSlider() {
   var target = event.target;
   if(!target.classList.contains('slider__button')) return;
   if(target.classList.contains('slider__button--left')) {
-    position = Math.min(itemWidth * step + position, 0);
+    position = Math.min(ITEM_WIDTH * STEP + position, 0);
   }
   if(target.classList.contains('slider__button--right')) {
-    position = Math.max(-itemWidth * step + position, -itemWidth * item.length + itemWidth * step);
+    position = Math.max(-ITEM_WIDTH * STEP + position, -ITEM_WIDTH * item.length + ITEM_WIDTH * STEP);
   }
   sliderContainer.style.transform = 'translateX(' + position + 'px)';
-  console.log('wtf&&&');
 }
 slider.addEventListener('click', moveSlider);
 
